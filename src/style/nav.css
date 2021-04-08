@@ -1,0 +1,47 @@
+li{
+    margin-right:5%;
+    display:inline;
+}
+ 
+ul{padding:0;
+}
+
+.header
+{
+    text-align:center;  
+}
+a{
+    text-decoration: none;
+    color:black;    
+}
+a:hover{
+    color:grey;
+}
+  span {
+    color:#d56a6a;
+}
+.checkOut
+{
+    background-color: rgb(216, 199, 214);
+    font-size:15px;
+    padding:10px;
+    font-weight: 500;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    outline:none;
+    float:right;
+}
+ .login
+ {
+    float:right;
+    height:35px;
+    font-size:15px;
+    padding:5px;
+    margin:0;
+    border:none;
+    border-radius: 5px;
+    background-color: rgb(216, 199, 214);
+    letter-spacing:2px;
+    cursor: pointer;
+ }

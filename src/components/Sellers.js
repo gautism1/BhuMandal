@@ -1,0 +1,82 @@
+import React from 'react'
+import MapContainer from './MapContainer'
+import '../style/seller.css';
+const axios = require('axios');
+
+
+function Sellers()
+{
+    const mapStyles = {
+        width: '100%',
+        height: '100%'
+      };
+    
+   let  submit =function(e)
+   {
+    e.preventDefault();
+    var elements = document.getElementById("dataform").elements;
+    var obj ={};
+    for(var i = 0 ; i < elements.length ; i++){
+        var item = elements.item(i);
+        obj[item.name] = item.value;
+    }   
+    console.log(obj)
+    axios.post("http://localhost:5000/shopList",obj).then((data)=>
+        {
+           alert("kudos !! Product details have been successfully uploaded ");
+        }
+    ).catch((err)=>
+    {
+        console.log(err,"error found");
+        alert("Something went wrong");
+        document.getElementById("dataform").reset();
+    }
+    )
+       
+   }
+    return (<>
+       <p>Owner and Property Details</p>
+            <span>All fields are compulsory</span>
+            <form  onSubmit={submit} id="dataform">
+<div className="complete-details">
+        <div className="additem">  
+               <input type="text" id="name" name="owner_name" placeholder ="Enter Owner Name"required ></input>
+               <br></br>
+ 
+               <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder='Enter Contact number'></input>
+                   <br></br>
+
+                <input type="email" id="email" name="email" placeholder='Enter owner email'></input>
+                   <br></br>
+
+               <input type="number" id="price" name="price" placeholder ="Enter  Estimaed Price /sq ft" required></input>
+               <br></br>
+                
+               <input type="text" id="desc" name="description"  placeholder ="Enter Description"required ></input>
+               <br></br>
+               <input type="text" id="desc" name="Road_facing"  placeholder ="Whether road facing or not"required ></input>
+               <br></br>
+               
+               
+               <input type="text" id="Near_by_landmark" name="sku"  placeholder ="Enter Nearby Landmark" required ></input>
+               <br></br>
+
+               <input type="number" id="bought" name="total_bought" placeholder ="Enter Buys"  ></input>
+               <br></br>
+              
+             <button type="submit" className="submit-form">Submit</button>
+        </div>
+        <div className="map-div">
+
+                <div className="map">
+                     <MapContainer/>
+                </div>
+ 
+        </div>
+</div>
+        </form>
+
+        </>
+    )
+}
+export default Sellers;
