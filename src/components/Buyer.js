@@ -40,7 +40,12 @@ function print(e)
 
     return <>
    <div className="categories"> <p>All list of Land to be sold</p>
-     <input type="text" placeholder="Search for city"></input>
+   
+   <form  >
+
+   <input type="text" placeholder="Search for city"></input>
+   <button type="submit" className="seacrh_land">Search</button>
+   </form>
     </div> 
 
      <div className="products" >  
