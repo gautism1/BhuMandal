@@ -1,5 +1,5 @@
 import React,{useState,useEffect,lazy} from 'react';
-import MapContainer from './MapContainer'
+import MapContainer from './MapContainerbuyer.js'
 import '../style/buyer.css';
 const axios = require('axios');
 
@@ -12,10 +12,11 @@ function Buyer () {
     const [fakeproducts, setfakeProduct] = useState([]);
     
      useEffect(() => {
-    axios.get('http://localhost:5000/shopList').then((res) => {
-       
+    axios.get('http://localhost:5000/seller').then((res) => {
+      
         setProduct(res.data);
         setfakeProduct(res.data);
+        console.log(products,"asa")
     }).catch((err)=>
     {
         console.log(err,"error found during fetching")
@@ -58,7 +59,10 @@ function print(e)
          /></div>))
       } */}
       <div className="map-home">
-      <MapContainer/>
+      <MapContainer
+      longitude
+      latitude
+      />
       </div>
      
     </div>

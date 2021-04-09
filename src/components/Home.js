@@ -4,14 +4,17 @@ import {
   } from "react-router-dom";
 import '../style/nav.css';
 import { GlobalContext } from "../Global/GlobalState";
+import img from '../assest/1.jpeg'
 
 function Home()
 {
   const {productlist} =useContext(GlobalContext);
     return (
-        <div>
+        <div  className="home"> 
+      
  Home sweet home
  <h1>
+
      a BIG BANNER WILL come here and  
 
  </h1>

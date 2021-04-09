@@ -43,7 +43,7 @@ function Sellers()
                <input type="text" id="name" name="owner_name" placeholder ="Enter Owner Name"required ></input>
                <br></br>
  
-               <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" placeholder='Enter Contact number'></input>
+               <input type="tel" id="phone" name="phone"   placeholder='Enter Contact number'></input>
                    <br></br>
 
                 <input type="email" id="email" name="email" placeholder='Enter owner email'></input>
@@ -54,22 +54,25 @@ function Sellers()
                 
                <input type="text" id="desc" name="description"  placeholder ="Enter Description"required ></input>
                <br></br>
-               <input type="text" id="desc" name="Road_facing"  placeholder ="Whether road facing or not"required ></input>
-               <br></br>
-               
-               
-               <input type="text" id="Near_by_landmark" name="sku"  placeholder ="Enter Nearby Landmark" required ></input>
+               <input type="text" id="desc" name="road_facing"  placeholder ="Whether road facing or not"required ></input>
                <br></br>
 
-               <input type="number" id="bought" name="total_bought" placeholder ="Enter Buys"  ></input>
+               <input type="text" id="Near_by_landmark" name="landmark"  placeholder ="Enter Nearby Landmark" required ></input>
                <br></br>
-              
-             <button type="submit" className="submit-form">Submit</button>
+                
+               <input type="text" id="unique_id" name="unique_id"  placeholder ="Enter Unique Id" required ></input>
+               <br></br>
+
+            
+            
+             <button type="submit" className="submit-form">Add Properties</button>
         </div>
         <div className="map-div">
 
                 <div className="map">
-                     <MapContainer/>
+                     <MapContainer
+                     
+                     />
                 </div>
  
         </div>

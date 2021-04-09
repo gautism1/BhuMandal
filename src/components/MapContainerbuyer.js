@@ -24,8 +24,8 @@ export class MapContainer extends Component {
   displayMarkers = () => {
     return this.state.stores.map((store, index) => {
       return <Marker key={index} id={index}
-      draggable={true}
-       position={{
+      
+         position={{
          lat: store.latitude,
           lng: store.longitude
      }}
@@ -45,7 +45,7 @@ export class MapContainer extends Component {
           zoom={8}
           style={mapStyles}
           initialCenter={{ lat: 47.444, lng: -122.176}}
-          editable={true}
+           
           draggable={true}
         >
           {this.displayMarkers()}

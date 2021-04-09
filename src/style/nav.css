@@ -8,7 +8,7 @@ ul{padding:0;
 
 .header
 {
-    text-align:center;  
+    text-align:left;  
 }
 a{
     text-decoration: none;
@@ -44,4 +44,13 @@ a:hover{
     background-color: rgb(216, 199, 214);
     letter-spacing:2px;
     cursor: pointer;
+ }
+ @media only screen and (max-width: 600px) {
+    .login {
+        float:left;
+        margin-top:10px;    
+    }
+  }
+ .home{
+     background-image: url(../assest/1.jpeg);
  }

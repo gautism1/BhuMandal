@@ -59,9 +59,11 @@ input[type=number] {
 }
 .map-div
 {
-   margin-top:5%;
+   margin-top:3%;
    align-items: center;
    justify-content: center;
     
 }
- 
+ .map-div{
+     width:300px;
+ }
