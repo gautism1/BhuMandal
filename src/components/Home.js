@@ -11,17 +11,12 @@ function Home()
   const {productlist} =useContext(GlobalContext);
     return (
         <div  className="home"> 
-      
- Home sweet home
- <h1>
-
-     a BIG BANNER WILL come here and  
-
- </h1>
- <h3>
-     ABout contact small smal components yaahn aaenge
-     neeche aate jaenge ek k baad ek
- </h3>
+      ******************************************************
+      <h1>
+       Believe it or now<br></br> 
+       We build create
+      </h1>
+**************************************************
 </div>
     )
 }

@@ -3,9 +3,6 @@ import MapContainer from './MapContainerbuyer.js'
 import '../style/buyer.css';
 const axios = require('axios');
 
-
-
-
 function Buyer () {
 
     const [products, setProduct] = useState([]);
@@ -50,14 +47,13 @@ function print(e)
     </div> 
 
      <div className="products" >  
-      {/* {
+      {
       products && products.length>0 &&
         products.map((product, index)=>(  <div key={index}className="card-ui">
-        <Productdetails
-         product={product}
-         index={index}
-         /></div>))
-      } */}
+         Owner Name :     {product.owner_name}
+         
+          </div>))
+      }
       <div className="map-home">
       <MapContainer
       longitude

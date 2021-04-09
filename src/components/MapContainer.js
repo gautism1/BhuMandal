@@ -12,13 +12,14 @@ export class MapContainer extends Component {
     super(props);
 
     this.state = {
-      stores: [{lat: 47.49855629475769, lng: -122.14184416996333},
+      stores: [
               {latitude: 47.359423, longitude: -122.021071},
               {latitude: 47.2052192687988, longitude: -121.988426208496},
               {latitude: 47.6307081, longitude: -122.1434325},
               {latitude: 47.3084488, longitude: -122.2140121},
               {latitude: 47.5524695, longitude: -122.0425407}]
     }
+    this.draw = this.draw.bind(this);
   }
 
   displayMarkers = () => {
@@ -33,14 +34,19 @@ export class MapContainer extends Component {
     })
   }
 
+
+    draw(mapProps, map, e)
+  {
+    const latlong  = {latitude: e.latLng.lat(), longitude: e.latLng.lng()}
+    //console.log(e.latLng.lat(), e.latLng.lng())
+  console.log(this.state.stores)
+  this.setState({ stores:[...this.state.stores,latlong]} )
+  }
   render() {
-    const draw=function()
-{
-  console.log("asa")
-}
+  
     return (
         <Map
-        onClick={draw}
+          onClick={this.draw}
           google={this.props.google}
           zoom={8}
           style={mapStyles}
