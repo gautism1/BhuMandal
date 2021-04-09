@@ -19,7 +19,7 @@ function Nav()
             <Link to="/buyers">Buyers</Link>
           </li>
           <li>
-            <Link to="/additem">Sellers</Link>
+            <Link to="/sellers">Sellers</Link>
           </li>
           {/* <li>
             <Link to="/cart">Cart   {productlist && productlist.length>0  && <span> ({productlist.length})</span>}</Link>

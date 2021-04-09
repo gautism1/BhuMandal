@@ -6,6 +6,7 @@ const axios = require('axios');
 
 function Sellers()
 {
+    
     const mapStyles = {
         width: '100%',
         height: '100%'
@@ -71,7 +72,7 @@ function Sellers()
 
                 <div className="map">
                      <MapContainer
-                     
+                        
                      />
                 </div>
  

@@ -25,8 +25,7 @@ function print(e)
 {e.preventDefault();
     if(e.target.value !="all")
      { let obj = products.find(product =>product.category==e.target.value);
-        setProduct(Object.entries(obj));  // obj is an object
-        
+        setProduct(Object.entries(obj));   
      }
      if(e.target.value =="all")
      {
@@ -51,7 +50,7 @@ function print(e)
       products && products.length>0 &&
         products.map((product, index)=>(  <div key={index}className="card-ui">
          Owner Name :     {product.owner_name}
-         
+
           </div>))
       }
       <div className="map-home">

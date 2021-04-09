@@ -25,7 +25,7 @@ function App() {
                     <Route exact path="/" component={Home} />
                     <Route  path="/buyers" component={Buyer} />
                    
-                    <Route path="/additem" component={Sellers} />
+                    <Route path="/sellers" component={Sellers} />
                   
                     <Route
                       path="*"
