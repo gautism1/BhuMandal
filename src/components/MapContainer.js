@@ -38,6 +38,7 @@ export class MapContainer extends Component {
     
   this.setState({stores:latlong })
   console.log(this.state.stores)
+  
   }
   render() {
   

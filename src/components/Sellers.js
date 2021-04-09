@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import MapContainer from './MapContainer'
 import '../style/seller.css';
 const axios = require('axios');
@@ -7,6 +7,7 @@ const axios = require('axios');
 function Sellers()
 {
     
+const [coordinates,setCoordiants]=useState({})
     const mapStyles = {
         width: '100%',
         height: '100%'
@@ -21,8 +22,8 @@ function Sellers()
         var item = elements.item(i);
         obj[item.name] = item.value;
     }   
-    console.log(obj)
-    axios.post("http://localhost:5000/shopList",obj).then((data)=>
+    
+    axios.post("http://localhost:5000/seller",obj).then((data)=>
         {
            alert("kudos !! Product details have been successfully uploaded ");
         }
@@ -72,7 +73,7 @@ function Sellers()
 
                 <div className="map">
                      <MapContainer
-                        
+                        setCoordiants={setCoordiants}
                      />
                 </div>
  
