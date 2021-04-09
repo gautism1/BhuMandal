@@ -6,15 +6,15 @@ const axios = require('axios');
 
 function Sellers()
 {
-    
-const [coordinates,setCoordiants]=useState({})
+const [coordinates,setCoordinates]=useState({})
+ 
     const mapStyles = {
         width: '100%',
         height: '100%'
       };
     
    let  submit =function(e)
-   {
+   {    
     e.preventDefault();
     var elements = document.getElementById("dataform").elements;
     var obj ={};
@@ -22,19 +22,20 @@ const [coordinates,setCoordiants]=useState({})
         var item = elements.item(i);
         obj[item.name] = item.value;
     }   
-    
-    axios.post("http://localhost:5000/seller",obj).then((data)=>
+    console.log(coordinates)
+    var obj1 = {details: obj,coordinates : coordinates};
+   
+
+    axios.post("http://localhost:5000/seller",obj1).then((data)=>
         {
            alert("kudos !! Product details have been successfully uploaded ");
         }
     ).catch((err)=>
-    {
-        console.log(err,"error found");
+    {    
         alert("Something went wrong");
         document.getElementById("dataform").reset();
     }
     )
-       
    }
     return (<>
        <p>Owner and Property Details</p>
@@ -64,8 +65,6 @@ const [coordinates,setCoordiants]=useState({})
                 
                <input type="text" id="unique_id" name="unique_id"  placeholder ="Enter Unique Id" required ></input>
                <br></br>
-
-            
             
              <button type="submit" className="submit-form">Add Properties</button>
         </div>
@@ -73,7 +72,7 @@ const [coordinates,setCoordiants]=useState({})
 
                 <div className="map">
                      <MapContainer
-                        setCoordiants={setCoordiants}
+                        setCoordinates={setCoordinates}
                      />
                 </div>
  

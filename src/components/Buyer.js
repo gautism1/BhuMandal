@@ -1,68 +1,42 @@
 import React,{useState,useEffect,lazy} from 'react';
-import MapContainer from './MapContainerbuyer.js'
+
 import '../style/buyer.css';
+import Property from './Property'
 const axios = require('axios');
 
 function Buyer () {
 
-    const [products, setProduct] = useState([]);
-    const [fakeproducts, setfakeProduct] = useState([]);
-    
-     useEffect(() => {
+    const [propertys, setProperty] = useState([]);
+   
+useEffect(() => {
     axios.get('http://localhost:5000/seller').then((res) => {
-      
-        setProduct(res.data);
-        setfakeProduct(res.data);
-        console.log(products,"asa")
+        setProperty(res.data);
+         console.log(res.data,"aa gya kya")
+        
     }).catch((err)=>
     {
+        alert("Something went wrong ")
         console.log(err,"error found during fetching")
     })
 },[]);
- 
-
-function print(e)
-{e.preventDefault();
-    if(e.target.value !="all")
-     { let obj = products.find(product =>product.category==e.target.value);
-        setProduct(Object.entries(obj));   
-     }
-     if(e.target.value =="all")
-     {
-         
-         setProduct(Object.entries(fakeproducts))
-         console.log(fakeproducts)
-     }
-    }
 
     return <>
    <div className="categories"> <p>All list of Land to be sold</p>
-   
-   <form  >
-
-   <input type="text" placeholder="Search for city"></input>
-   <button type="submit" className="seacrh_land">Search</button>
-   </form>
     </div> 
 
      <div className="products" >  
       {
-      products && products.length>0 &&
-        products.map((product, index)=>(  <div key={index}className="card-ui">
-         Owner Name :     {product.owner_name}
-
+      propertys && propertys.length>0 &&
+        propertys.map((property, index)=>( 
+         <div key={index}className="card-ui">
+             <Property
+             property={property}
+             />
           </div>))
       }
-      <div className="map-home">
-      <MapContainer
-      longitude
-      latitude
-      />
-      </div>
-     
+    
     </div>
     </>
 }
     
-
 export default Buyer;

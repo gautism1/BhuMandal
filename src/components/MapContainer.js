@@ -23,9 +23,9 @@ export class MapContainer extends Component {
   displayMarkers = () => {
     
       return <Marker 
-      draggable={true}
+      draggable={false}
        position={{
-         lat: this.state.stores.latitude,
+          lat: this.state.stores.latitude,
           lng: this.state.stores.longitude
      }}
      onClick={() => console.log("You clicked me!")} />
@@ -37,8 +37,9 @@ export class MapContainer extends Component {
     const latlong  = {latitude: e.latLng.lat(), longitude: e.latLng.lng()}
     
   this.setState({stores:latlong })
-  console.log(this.state.stores)
+  this.props.setCoordinates(latlong)
   
+   
   }
   render() {
   
