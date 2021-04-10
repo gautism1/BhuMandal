@@ -21,10 +21,7 @@ function Nav()
           <li>
             <Link to="/sellers">Sellers</Link>
           </li>
-          {/* <li>
-            <Link to="/cart">Cart   {productlist && productlist.length>0  && <span> ({productlist.length})</span>}</Link>
-          </li> */}
-                <button className="   login">Login / Signin</button>
+                {/* <button className="login">Login / Signin</button> */}
 
         </ul>
         

@@ -52,11 +52,12 @@ a:hover{
     }
   }
  .home{
-     height:40vw;
+     height:500px;
      text-align:center;
+     width:100%;
      background-image: url(../assest/1.jpeg);
  }
  .home >h1{
      color:grey;    
-     margin-top:20%;
+     
  }

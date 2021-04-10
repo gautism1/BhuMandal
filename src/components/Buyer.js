@@ -20,8 +20,9 @@ useEffect(() => {
     })
 },[]);
 
-    return <>
-   <div className="categories"> <p>All list of Land to be sold</p>
+    return(
+    <div className="categories">
+   <div > <p>All list of Land to be sold</p>
     </div> 
 
      <div className="products" >  
@@ -34,9 +35,8 @@ useEffect(() => {
              />
           </div>))
       }
-    
     </div>
-    </>
+   </div>)
 }
     
 export default Buyer;

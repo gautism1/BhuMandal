@@ -31,21 +31,13 @@ function Property (props) {
                     Price :  {props.property.price} /sq. ft.
         </div>    
 
-        <p className="product-desc">   About :     
+        <div className="product-desc">   About :     
                          {props.property.description}  +It is   {props.property.road_facing}
-        </p>
+         </div>
         <div className="product-reviews">  Phone No. 
                    {props.property.phone}
         </div>
 
-         
-      </div>       
-   </div>       
-<div className="pay">
-        <div class="button-div">       
-        <button className="cart-button-remove" onClick={showmap}> View Location    </button>
-        </div>    
-        <div className="maplist">
         { map && <div className="map-home">
          <MapContainer 
 
@@ -53,6 +45,13 @@ function Property (props) {
          />
       </div>
             }
+      </div>       
+   </div>       
+<div className="pay">
+        <div class="button-div">       
+        <button className="cart-button-remove" onClick={showmap}> View Location    </button>
+        </div>    
+        <div className="maplist">
              </div>
       
   </div>
